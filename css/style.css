@@ -1,0 +1,117 @@
+body{margin: 0;}
+
+.title{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	background-color: #eee;
+	margin: 0;
+	font-size: 16px;
+	font-weight: normal;
+	text-align: center;
+	line-height: 40px;
+}
+
+.content{
+	position: relative;
+	top: 40px;
+	left: 0;
+	width: 100%;
+}
+
+.term{
+	display: block;
+	text-align: left;
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+	padding: 15px;
+	padding-left: 10px;
+	width: 100%;
+	font-size: 14px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	box-sizing:border-box;
+}
+
+.term:empty{display: none;}
+
+.share-info .intro{
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 16px;
+	color: #000;
+	padding: 5px;
+	color: #000;
+	background-color: #ddd;
+	margin: 0;
+	padding-left: 10px;
+}
+
+#share-img{
+	width: 60%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+#share-title,
+#share-desc{
+	display: block;
+	width: 90%;
+	margin: 5px auto;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+#share-title:focus,
+#share-desc:focus{
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+.btn-update,
+.btn-share{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 14px;
+	padding-right: 14px;
+	font-size: 18px;
+	text-align: center;
+	text-decoration: none;
+	overflow: visible;
+	height: 42px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	color: #ffffff;
+	line-height: 42px;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	width: 80%;
+	margin: 5px auto;
+	background-color: #04be02;
+}
+
+.btn-share:active,
+.btn-update:active{
+	background-color:#039702;
+}

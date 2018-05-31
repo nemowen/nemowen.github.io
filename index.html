@@ -1,1 +1,70 @@
 <h1>Hello Nemo</h1>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+	<meta itemprop="description" name="description" content="我是分享摘要">
+	<meta itemprop="image" name="image" content="img/goods1.jpg">
+	<meta itemprop="name" name="name" content="我是分享标题">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>测试H5分享</title>
+</head>
+<body>
+	<h1 class="title">分享demo</h1>
+	<div class="content">
+		<label class="term"></label>
+		<div class="share-info">
+			<h2 class="intro">缩略图</h2>
+			<img id="share-img" src="img/goods1.jpg" />
+			<h2 class="intro">标题</h2>
+			<input id="share-title" type="text" value="我是分享标题" />
+			<h2 class="intro">摘要</h2>
+			<input id="share-desc" type="text" value="我是分享摘要" />
+			<h2 class="intro">操作</h2>
+			<a href="javascript:;" class="btn-update">更新分享信息</a>
+			<a href="javascript:;" class="btn-share">执行分享</a>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/h5share.js"></script>
+	<script type="text/javascript">
+		// 获取当前页面Url及信息
+		var info = {};
+	 	info.url = window.location.href.replace(window.location.hash, '');
+	 	info.img = $('#share-img').attr('src');
+	 	info.title = $('#share-title').val();
+	 	info.desc = $('#share-desc').val();
+	 	info.debug = true;// 是否弹出提示
+  		$.getJSON('http://isux.us/tool/wxapi/signature.php?url='+encodeURIComponent(info.url),function(data) {
+  			info.appId = data.appId;
+  			info.timestamp = data.timestamp;
+  			info.nonceStr = data.nonceStr;
+  			info.signature = data.signature;
+
+	        // 配置
+			var hs = h5share(info);
+			$('.term').text('当前终端'+hs.getTerm());
+
+			// 更新分享信息
+	   		$('.btn-update').bind('touchend',function(){
+				info.img = $('#share-img').attr('src');
+			 	info.title = $('#share-title').val();
+			 	info.desc = $('#share-desc').val();
+
+			 	// 更新分享配置
+			 	hs.update(info);
+	   		});
+
+			// 空间执行分享
+	   		$('.btn-share').bind('touchend',function(){
+	   			hs.showShareMenu(function(state){
+	   				// 若为false，表示暂不支持弹窗
+	   				if(state==false){
+	   					//弹出"点击右上角图标分享"提示
+	   				}
+	   			});
+	   		});
+   		});
+	</script>
+</body>
+</html>
