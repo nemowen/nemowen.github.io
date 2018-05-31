@@ -35,7 +35,7 @@
 	 	info.title = $('#share-title').val();
 	 	info.desc = $('#share-desc').val();
 	 	info.debug = true;// 是否弹出提示
-  		$.getJSON('http://isux.us/tool/wxapi/signature.php?url='+encodeURIComponent(info.url),function(data) {
+  		$.getJSON('https://isux.us/tool/wxapi/signature.php?url='+encodeURIComponent(info.url),function(data) {
   			info.appId = data.appId;
   			info.timestamp = data.timestamp;
   			info.nonceStr = data.nonceStr;
