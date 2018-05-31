@@ -364,17 +364,17 @@
 		var that = this;
 		switch(getPlatform()){
 			case 'wechat':
-				loadscript('http://res.wx.qq.com/open/js/jweixin-1.0.0.js',function(){
+				loadscript('https://res.wx.qq.com/open/js/jweixin-1.0.0.js',function(){
 					that.shareWX();
 				});
 				break;
 			case 'qq':
-				loadscript('http://pub.idqqimg.com/qqmobile/qqapi.js?_bid=152',function(){
+				loadscript('https://pub.idqqimg.com/qqmobile/qqapi.js?_bid=152',function(){
 					that.shareQQ();
 				});
 				break;
 			case 'qzone':
-				loadscript('http://qzs.qq.com/qzone/phone/m/v4/widget/mobile/jsbridge.js',function(){
+				loadscript('https://qzs.qq.com/qzone/phone/m/v4/widget/mobile/jsbridge.js',function(){
 					that.shareQZONE();
 				});
 				break;
